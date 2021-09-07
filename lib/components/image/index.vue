@@ -59,12 +59,6 @@ export default {
   },
 
   head () {
-    let cssRule = null;
-
-    if (this.meta) {
-      cssRule = new ImageSource(this.meta).style;
-    }
-
     const preloads = [];
     if (this.config && this.isCritical) {
       preloads.push(new ImageSource(this.source).getPreload(this.config.srcset, this.config.sizes));
@@ -76,10 +70,6 @@ export default {
           cssText: this.loadingSpinner.style,
           type: 'text/css',
           hid: this.loadingSpinner.className
-        }, {
-          cssText: cssRule,
-          type: 'text/css',
-          hid: this.className
         }
       ],
       link: preloads,

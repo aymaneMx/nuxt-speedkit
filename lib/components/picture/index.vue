@@ -38,33 +38,20 @@ export default {
 
   data () {
     return {
-      metaSources: {},
+      meta: {},
       classNames: {}
     };
   },
 
   fetchKey: 'picture',
   async fetch () {
-    this.metaSources = await this.sources.getMeta(this.$img);
-    this.classNames = this.metaSources.classNames;
-  },
-
-  head () {
-    if (this.metaSources) {
-      const metaSources = (this.metaSources.length && new ImageSourceList(this.metaSources)) || this.metaSources;
-      return {
-        style: [{
-          cssText: metaSources.style,
-          type: 'text/css',
-          hid: this.classNames.picture
-        }]
-      };
-    }
+    this.meta = await this.sources.getMeta(this.$img);
+    this.classNames = this.meta.classNames;
   },
 
   computed: {
     formatSources () {
-      return this.sources.getFormats(['avif', 'webp', 'jpg']);
+      return this.sources.getFormats(['jpg']); // 'avif', 'webp',
     },
 
     preloadSources () {
