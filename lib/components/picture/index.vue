@@ -51,7 +51,7 @@ export default {
 
   computed: {
     formatSources () {
-      return this.sources.getFormats(['jpg']); // 'avif', 'webp',
+      return this.sources.getFormats(['avif', 'webp', 'jpg']);
     },
 
     preloadSources () {
