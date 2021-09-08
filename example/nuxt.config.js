@@ -106,6 +106,7 @@ module.exports = {
     alias: {
       dummyimage: 'https://dummyimage.com',
       picsum: 'https://picsum.photos',
+      dummyimage: 'https://dummyimage.com',
       youtube: 'https://img.youtube.com',
       vimeo: 'https://i.vimeocdn.com'
     }
