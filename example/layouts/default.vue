@@ -113,6 +113,8 @@ export default {
 
 <style lang="postcss">
 
+@import '~/fonts.css';
+
 html {
   height: stretch;
 }

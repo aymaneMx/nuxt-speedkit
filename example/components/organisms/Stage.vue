@@ -1,23 +1,26 @@
 <template>
   <div class="component-stage">
-    <speedkit-picture v-bind="picture" />
+    <default-picture v-bind="picture" />
     <h1
       v-font="[
         $getFont('Montserrat Alternates', 700, 'normal', {selector: '.headline'}),
         $getFont('Merriweather', 300, 'italic', {selector: '.claim'})
       ]"
     >
-      <span class="headline">{{ headline }}</span>
+      <span class="headline">{{ headline }}
+        <!-- <span>{{ headline }}</span> -->
+        <span />
+      </span>
       <span class="claim">{{ claim }}</span>
     </h1>
   </div>
 </template>
 
 <script>
-import SpeedkitPicture from 'nuxt-speedkit/components/SpeedkitPicture';
+import DefaultPicture from 'nuxt-speedkit/components/picture';
 export default {
   components: {
-    SpeedkitPicture
+    DefaultPicture
   },
   props: {
     picture: { type: Object, default () { return {}; } },
@@ -43,13 +46,26 @@ export default {
   }
 
   & .headline {
+    position: relative;
     display: block;
-    font-size: 30px;
-    line-height: 60px;
+    height: 60px;
+
+    /* font-family: sans-serif-fallback, Arial, Helvetica, sans-serif; */
+    font-size: 40px;
 
     @media (min-width: 768px) {
       font-size: 40px;
       line-height: 80px;
+    }
+
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      font-family: sans-serif-fallback, Arial, Helvetica, sans-serif;
+      color: red;
+      opacity: 0.6;
     }
   }
 
