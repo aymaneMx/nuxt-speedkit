@@ -179,7 +179,7 @@ module.exports = {
     }, {
       family: 'Merriweather',
       locals: ['Merriweather'],
-      fallback: ['Georgia', 'sans-serif'],
+      fallback: ['georgia-fallback', 'sans-serif'],
       variances: [
         {
           style: 'normal',
@@ -228,7 +228,7 @@ module.exports = {
     }, {
       family: 'Montserrat Alternates',
       locals: ['Montserrat Alternates', 'Montserrat-Alternates'],
-      fallback: ['sans-serif'],
+      fallback: ['sans-serif-fallback'],
       variances: [
         {
           style: 'normal',
